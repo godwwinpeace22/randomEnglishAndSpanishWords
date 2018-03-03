@@ -4,12 +4,12 @@ module.exports = function(arg){
 	let $append = function(){
 		//to be appended at the end of the generated random words
 		// this generate random numbers between min and max and converts them to base 16
-		if(arg.append === false){}
+		if(arg.append === false){return ''}
 		else{
 		   let min = 100000;
 		   let max = 900000;
 		   let randomDec = Math.floor(Math.random()*(max-min+1)+min);
-		   return randomDec.toString(16);
+		   return '-' + randomDec.toString(16);
 		}
 	   
    }
@@ -24,14 +24,12 @@ module.exports = function(arg){
 	if(arg.lang == 'both'){
 		$pusher('spanish');
 		$pusher('english');
-		word_box.push($append());
 	}
 	else{
 		arg.lang == 'spanish' ? arg.lang = spanishWords : arg.lang == 'english' ? arg.lang = englishWords : ''
 		$pusher(arg.lang);
-		word_box.push($append());
 	}
 	
 	//Joins all the words in the 'word_box' array
-	return word_box.join('-');
+	return `${word_box.join('-')} ${$append()}`;
 }
