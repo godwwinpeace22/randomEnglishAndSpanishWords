@@ -4,7 +4,7 @@ module.exports = function(arg){
 	let $append = function(){
 		//to be appended at the end of the generated random words
 		// this generate random numbers between min and max and converts them to base 16
-		if(status === false){return ''}
+		if(arg.append === false){return ''}
 		else{
 		   let min = 100000;
 		   let max = 900000;
@@ -31,5 +31,5 @@ module.exports = function(arg){
 	}
 	
 	//Joins all the words in the 'word_box' array
-	return `${word_box.join('-')}-${$append(arg.amount,arg.status)}`;
+	return `${word_box.join('-')}-${$append()}`;
 }
