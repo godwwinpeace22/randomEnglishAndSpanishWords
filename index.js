@@ -4,14 +4,10 @@ module.exports = function(arg){
 	let $append = function(){
 		//to be appended at the end of the generated random words
 		// this generate random numbers between min and max and converts them to base 16
-		if(arg.append === false){return ''}
-		else{
-		   let min = 100000;
-		   let max = 900000;
-		   let randomDec = Math.floor(Math.random()*(max-min+1)+min);
-		   return '-' + randomDec.toString(16);
-		}
-	   
+		let min = 100000;
+		let max = 900000;
+		let randomDec = Math.floor(Math.random()*(max-min+1)+min);
+		return randomDec.toString(16);
    }
    
 	let word_box = [];
@@ -31,5 +27,7 @@ module.exports = function(arg){
 	}
 	
 	//Joins all the words in the 'word_box' array
-	return `${word_box.join('-')} ${$append()}`;
+	arg.append == true ? 
+	return `${word_box.join('-')} ${$append()}` :
+	return word_box.join('-');
 }
