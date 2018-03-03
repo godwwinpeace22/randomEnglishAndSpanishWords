@@ -1,6 +1,6 @@
 {
   "name": "randomwords_engspanish",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a module to generate random english and spanish words",
   "main": "index.js",
   "scripts": {
