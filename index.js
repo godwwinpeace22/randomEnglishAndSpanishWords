@@ -1,3 +1,5 @@
+let englishWords = require('./words.js').englishWords;
+let spanishWords = require('./words.js').spanishWords;
 module.exports = function(arg){
 	let $append = function(){
 		//to be appended at the end of the generated random words
