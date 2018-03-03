@@ -27,7 +27,11 @@ module.exports = function(arg){
 	}
 	
 	//Joins all the words in the 'word_box' array
-	arg.append == true ? 
-	return `${word_box.join('-')} ${$append()}` :
-	return word_box.join('-');
+	if(arg.append == true){
+		return `${word_box.join('-')} ${$append()}`
+	}
+	else{
+		return word_box.join('-');
+	}
+	
 }
